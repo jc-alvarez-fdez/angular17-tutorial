@@ -1,0 +1,21 @@
+
+<h1> Hellow  {{ username }}, you are a {{ occupation }} </h1>
+
+@if (doesUserExists) {
+  <p>Congratulations! You Do exist =)</p>
+}
+@else {
+  <p>We're sorry, but we have doubds about your existense</p>
+}
+<h2>He're your operating systems</h2>
+@for (os of operatingSystems; track os.id) {
+ <ul>
+  <li (mouseover)="onMouseOver(os.name)">{{ os.name }}</li>
+</ul>
+}
+
+
+<div class="editable" [contentEditable]= "isEditable">
+  <button (click)="emitToParent">Message to parent</button>
+
+</div>
