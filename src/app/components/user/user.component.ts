@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { OperatingSystem } from '../../interfaces/operating-systems';
 
 @Component({
   selector: 'app-user',
@@ -12,14 +13,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class UserComponent {
 
   @Input() occupation: string ="";
-  @Output() greet: EventEmitter<string> = new EventEmitter<string>();
+  @Output() greet: EventEmitter<string>  = new EventEmitter<string>();
 
   username: string = "JC";
 
   doesUserExists: boolean = true;
   isEditable: boolean = true;
 
-  operatingSystems = [
+  operatingSystems: OperatingSystem[] = [
     {
       id: 'win',
       name: 'Windows'
@@ -39,9 +40,8 @@ onMouseOver(osName: string): void {
 }
 
 emitToParent(): void {
- this.greet.emit("Hi I'm your children")
+  this.greet.emit("Hi! I'm your child");
 }
-
 
 
 }

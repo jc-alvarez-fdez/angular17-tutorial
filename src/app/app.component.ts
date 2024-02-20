@@ -21,10 +21,11 @@ export class AppComponent {
 
   title = 'angular17-tutorial';
   userOcuppation: string = "Developer";
+  childsMessage: string = "";
 
-  receiveEmision($event: any): void {
-    console.log($event)
-    throw new Error('Method not implemented.');
-    }
+  receiveEmision($event: string) {
+    this.childsMessage = $event;
+  }
+
 
 }
